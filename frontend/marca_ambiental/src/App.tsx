@@ -6,12 +6,14 @@ import { Sidebar } from "./components/Sidebar";
 import { Burger } from "./components/Burger";
 
 
-import { BrowserRouter, Routes,Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import {About} from "./pages/About";
 import {Home} from "./pages/Home";
-import {Forms} from "./pages/Forms";
+import {Form} from "./pages/Form";
 import {Area} from "./pages/Area";
+import { Login } from "./pages/Login";
+import { User } from "./pages/User";
 
 
 export interface AppProps {}
@@ -39,7 +41,9 @@ export const App: React.FC<AppProps> = (props) => {
         <Route path='/' element={<Home/>}/>
         <Route path='area' element={<Area/>}/>
         <Route path='about' element={<About/>}/>
-        <Route path='forms' element={<Forms/>}/>
+        <Route path='forms' element={<Form/>}/>
+        <Route path='user' element={<User/>}/>
+        <Route path='admin' element={<Login/>}/>
       </Routes>
       </BrowserRouter>
     </>

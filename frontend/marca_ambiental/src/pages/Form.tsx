@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { CardProps } from "../App";
 import { Card } from "../components/Card";
 import { Dashboard } from "../components/Dashboard";
+import { NewInfoButton } from "../components/NewInfoButton";
+import { NewInfoModal } from "../components/NewInfoModal";
 
 export interface FormsProps {}
 
@@ -12,17 +14,32 @@ const Container = styled.div`
   
   align-items: center;
 
-  h1{
-    margin-left: 2rem;
-
-    text-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
-  }
   .Space {
     margin-top: 1.5rem;
   }
 `;
 
-export const Forms: React.FC<FormsProps> = props => {
+const Content = styled.div`
+  display: flex;
+  justify-content: space-between;
+  h1{
+    margin-left: 2rem;
+    color: #FFF;
+    text-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+  }
+`;
+
+export const Form: React.FC<FormsProps> = props => {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  function handleOpenModal(){
+    setIsModalOpen(true);
+  }
+
+  function handleCloseModal() {
+    setIsModalOpen(false);
+  }
 
   const infos: CardProps[] = [
     {
@@ -49,7 +66,10 @@ export const Forms: React.FC<FormsProps> = props => {
     <>
       <Dashboard >
         <Container>
-          <h1>Formulários</h1>
+          <Content>
+            <h1>Formulários</h1>
+            <NewInfoButton title="formulário" onOpen={handleOpenModal}/>
+          </Content>
           {infos.map(info => (
             <div className="Space">
               <Card title={info.title} description={info.description} type={info.type} link={info.link} />
@@ -57,6 +77,7 @@ export const Forms: React.FC<FormsProps> = props => {
           ))}
         </Container>
       </ Dashboard>
+      <NewInfoModal title="formulário" isOpen={isModalOpen} onRequestClose={handleCloseModal} />
     </>
   )
 }
