@@ -1,0 +1,26 @@
+"use strict";
+exports.__esModule = true;
+exports.userRoute = void 0;
+var express_1 = require("express");
+var ensureAuthenticateUser_1 = require("../middlewares/ensureAuthenticateUser");
+var CreateUserController_1 = require("../Modules/Users/CreateUser/CreateUserController");
+var DeleteUserByIDController_1 = require("../Modules/Users/DeleteUser/DeleteUserByIDController");
+var ReadUsersByIDController_1 = require("../Modules/Users/ReadUsers/ByID/ReadUsersByIDController");
+var ReadAllUsersController_1 = require("../Modules/Users/ReadUsers/ReadAllUsersController");
+var UpdateUserController_1 = require("../Modules/Users/UpdateUser/UpdateUserController");
+var AuthenticateUserController_1 = require("../services/AuthenticateUserController");
+var userRoute = (0, express_1.Router)();
+exports.userRoute = userRoute;
+var createUserController = new CreateUserController_1.CreateUserController();
+var authenticateUserController = new AuthenticateUserController_1.AuthenticateUserController();
+var deleteUserByIDController = new DeleteUserByIDController_1.DeleteUserByIDController();
+var updateUserByID = new UpdateUserController_1.UpdateUserController();
+var readlAllUsers = new ReadAllUsersController_1.ReadAllUsersController();
+var readUserById = new ReadUsersByIDController_1.ReadUsersByIdController();
+userRoute.get('/', ensureAuthenticateUser_1.ensureAuthenticateUser, readlAllUsers.handle);
+userRoute.get('/:id', ensureAuthenticateUser_1.ensureAuthenticateUser, readUserById.handle);
+userRoute.post('/', createUserController.handle);
+userRoute.post('/authenticate', authenticateUserController.handle);
+userRoute.put('/:id', ensureAuthenticateUser_1.ensureAuthenticateUser, updateUserByID.handle);
+userRoute["delete"]('/:id', ensureAuthenticateUser_1.ensureAuthenticateUser, deleteUserByIDController.handle);
+//# sourceMappingURL=UserRoute.js.map

@@ -1,0 +1,23 @@
+"use strict";
+exports.__esModule = true;
+exports.areaRoutes = void 0;
+var express_1 = require("express");
+var ensureAuthenticateUser_1 = require("../middlewares/ensureAuthenticateUser");
+var CreateAreaController_1 = require("../Modules/Areas/create_area/CreateAreaController");
+var DeleteAreaByIDController_1 = require("../Modules/Areas/DeleteArea/ByID/DeleteAreaByIDController");
+var ReadAreaController_1 = require("../Modules/Areas/ReadArea/ByID/ReadAreaController");
+var ReadAllAreasController_1 = require("../Modules/Areas/ReadArea/ReadAllAreasController");
+var UpdateAreaController_1 = require("../Modules/Areas/update_area/UpdateAreaController");
+var areaRoutes = (0, express_1.Router)();
+exports.areaRoutes = areaRoutes;
+var deleteAreaByIDController = new DeleteAreaByIDController_1.DeleteAreaByIDController();
+var createAreaController = new CreateAreaController_1.CreateAreaController();
+var updateAreaController = new UpdateAreaController_1.UpdateAreaController();
+var readAreaController = new ReadAreaController_1.ReadAreaController();
+var readAllAreasController = new ReadAllAreasController_1.ReadAllAreasController();
+areaRoutes.get('/', readAllAreasController.handle);
+areaRoutes.get('/:id', readAreaController.handle);
+areaRoutes.post('/', ensureAuthenticateUser_1.ensureAuthenticateUser, createAreaController.handle);
+areaRoutes.put('/:id', ensureAuthenticateUser_1.ensureAuthenticateUser, updateAreaController.handle);
+areaRoutes["delete"]('/:id', ensureAuthenticateUser_1.ensureAuthenticateUser, deleteAreaByIDController.handle);
+//# sourceMappingURL=AreaRoute.js.map
