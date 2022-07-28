@@ -11,6 +11,6 @@ export class CreateAreaController {
             description,
             user_id
         });
-        return response.json("Área cadastrada!" + result);
+        return response.json("Área cadastrada! " + result);
     }
 }

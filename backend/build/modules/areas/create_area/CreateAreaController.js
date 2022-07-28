@@ -56,7 +56,7 @@ var CreateAreaController = /** @class */ (function () {
                             })];
                     case 1:
                         result = _b.sent();
-                        return [2 /*return*/, response.json("Área cadastrada!" + result)];
+                        return [2 /*return*/, response.json("Área cadastrada! " + result)];
                 }
             });
         });

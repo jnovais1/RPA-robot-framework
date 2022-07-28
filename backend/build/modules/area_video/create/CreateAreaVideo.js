@@ -36,30 +36,38 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-exports.DeleteForm = void 0;
-var PrismaClient_1 = require("../../../Database/PrismaClient");
-var DeleteForm = /** @class */ (function () {
-    function DeleteForm() {
+exports.CreateAreaVideo = void 0;
+var PrismaClient_1 = require("../../../database/PrismaClient");
+var CreateAreaVideo = /** @class */ (function () {
+    function CreateAreaVideo() {
     }
-    DeleteForm.prototype.execute = function (_a) {
-        var form_id = _a.form_id;
+    CreateAreaVideo.prototype.execute = function (_a) {
+        var area_id = _a.area_id, user_id = _a.user_id, video_id = _a.video_id, order = _a.order;
         return __awaiter(this, void 0, void 0, function () {
-            var result;
+            var maxOrderVideo, newAreaVideo;
             return __generator(this, function (_b) {
                 switch (_b.label) {
-                    case 0: return [4 /*yield*/, PrismaClient_1.prisma.form["delete"]({
-                            where: {
-                                id: form_id
-                            }
-                        })];
+                    case 0:
+                        maxOrderVideo = order > 10;
+                        if (maxOrderVideo) {
+                            throw new Error("Uma área não pode possuir mais de 10 vídeos.");
+                        }
+                        return [4 /*yield*/, PrismaClient_1.prisma.area_video.create({
+                                data: {
+                                    area_id: area_id,
+                                    order: order,
+                                    user_id: user_id,
+                                    video_id: video_id
+                                }
+                            })];
                     case 1:
-                        result = _b.sent();
-                        return [2 /*return*/, result];
+                        newAreaVideo = _b.sent();
+                        return [2 /*return*/, newAreaVideo];
                 }
             });
         });
     };
-    return DeleteForm;
+    return CreateAreaVideo;
 }());
-exports.DeleteForm = DeleteForm;
-//# sourceMappingURL=DeleteForm.js.map
+exports.CreateAreaVideo = CreateAreaVideo;
+//# sourceMappingURL=CreateAreaVideo.js.map

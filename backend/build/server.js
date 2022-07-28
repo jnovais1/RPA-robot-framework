@@ -9,6 +9,7 @@ var UserRoute_1 = require("./routes/UserRoute");
 var AreaRoute_1 = require("./routes/AreaRoute");
 var FormRoute_1 = require("./routes/FormRoute");
 var VideoRoute_1 = require("./routes/VideoRoute");
+var AreaVideoRoute_1 = require("./routes/AreaVideoRoute");
 var app = (0, express_1["default"])();
 var port = 3000;
 app.use(express_1["default"].json());
@@ -16,6 +17,7 @@ app.use('/area', AreaRoute_1.areaRoutes);
 app.use('/user', UserRoute_1.userRoute);
 app.use('/forms', FormRoute_1.formRoute);
 app.use('/video', VideoRoute_1.videoRoute);
+app.use('/area_video', AreaVideoRoute_1.areaVideoRoute);
 app.use(function (err, req, res, next) {
     if (err instanceof Error) {
         return res.status(400).json({

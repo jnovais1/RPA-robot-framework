@@ -4,6 +4,7 @@ import {userRoute} from "./routes/UserRoute"
 import { areaRoutes } from "./routes/AreaRoute";
 import { formRoute } from "./routes/FormRoute";
 import { videoRoute } from "./routes/VideoRoute";
+import { areaVideoRoute } from "./routes/AreaVideoRoute";
 
 const app = express();
 const port = 3000;
@@ -13,6 +14,7 @@ app.use('/area', areaRoutes);
 app.use('/user', userRoute);
 app.use('/forms', formRoute);
 app.use('/video', videoRoute);
+app.use('/area_video', areaVideoRoute);
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     if(err instanceof Error) {

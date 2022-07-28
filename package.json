@@ -1,0 +1,20 @@
+{
+  "name": "marca_ambiental",
+  "version": "1.0.0",
+  "description": "Projeto Mãos que Conectam com a Segurança",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/istdevsenai/marca_ambiental.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/istdevsenai/marca_ambiental/issues"
+  },
+  "homepage": "https://github.com/istdevsenai/marca_ambiental#readme"
+}

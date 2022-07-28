@@ -36,34 +36,33 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-exports.UpdateArea = void 0;
-var PrismaClient_1 = require("../../../Database/PrismaClient");
-var UpdateArea = /** @class */ (function () {
-    function UpdateArea() {
+exports.CreateAreaVideoController = void 0;
+var CreateAreaVideo_1 = require("./CreateAreaVideo");
+var CreateAreaVideoController = /** @class */ (function () {
+    function CreateAreaVideoController() {
     }
-    UpdateArea.prototype.execute = function (_a) {
-        var area_id = _a.area_id, name = _a.name, description = _a.description;
+    CreateAreaVideoController.prototype.handle = function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
-            var result;
+            var _a, area_id, user_id, video_id, order, createAreaVideo, result;
             return __generator(this, function (_b) {
                 switch (_b.label) {
-                    case 0: return [4 /*yield*/, PrismaClient_1.prisma.area.update({
-                            where: {
-                                id: area_id
-                            },
-                            data: {
-                                name: name,
-                                description: description
-                            }
-                        })];
+                    case 0:
+                        _a = req.body, area_id = _a.area_id, user_id = _a.user_id, video_id = _a.video_id, order = _a.order;
+                        createAreaVideo = new CreateAreaVideo_1.CreateAreaVideo();
+                        return [4 /*yield*/, createAreaVideo.execute({
+                                user_id: user_id,
+                                video_id: video_id,
+                                area_id: area_id,
+                                order: order
+                            })];
                     case 1:
                         result = _b.sent();
-                        return [2 /*return*/, result];
+                        return [2 /*return*/, res.json("Área cadastrada. " + result)];
                 }
             });
         });
     };
-    return UpdateArea;
+    return CreateAreaVideoController;
 }());
-exports.UpdateArea = UpdateArea;
-//# sourceMappingURL=UpdateArea.js.map
+exports.CreateAreaVideoController = CreateAreaVideoController;
+//# sourceMappingURL=CreateAreaVideoController.js.map
