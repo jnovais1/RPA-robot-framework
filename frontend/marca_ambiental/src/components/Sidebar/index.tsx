@@ -19,6 +19,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ open, ...props }) => {
           <NavbarLink to="forms" className="nav-link">
             Formulários
           </NavbarLink>
+          <NavbarLink to="video" className="nav-link">
+            Vídeos
+         </NavbarLink>
           <NavbarLink to="user" className="nav-link">
             Usuários
           </NavbarLink>

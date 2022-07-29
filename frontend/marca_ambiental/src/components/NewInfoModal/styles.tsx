@@ -67,7 +67,7 @@ export const ButtonDiv = styled.div`
   }
   button + button {
       text-decoration: none;
-      background-color: var(--dark-green);
+      background-color: var(--grey);
 
       margin-left: 2rem;
   }

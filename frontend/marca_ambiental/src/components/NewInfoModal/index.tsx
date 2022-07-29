@@ -28,7 +28,7 @@ export function NewInfoModal({title, isOpen, onRequestClose}: ModalProps) {
           <textarea 
           />
 
-          {title === "área" ? (
+          {title === "área" || title === "video" ? (
               <>
                 <h4>Videos: </h4>
                 <input />
