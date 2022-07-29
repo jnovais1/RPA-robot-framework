@@ -9,7 +9,7 @@ interface ICreateVideos {
 
 export class CreateVideos {
     async execute({ name, description, user_id, link }: ICreateVideos) {
-        const videoAlreadyExists = await prisma.form.findFirst({
+        const videoAlreadyExists = await prisma.video.findFirst({
             where: {
                 link: link
             }

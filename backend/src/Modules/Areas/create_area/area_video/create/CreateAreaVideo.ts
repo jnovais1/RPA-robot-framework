@@ -1,5 +1,4 @@
-import { NextFunction } from "express";
-import { prisma } from "../../../database/PrismaClient";
+import { prisma } from "../../../../../database/PrismaClient";
 
 interface ICreateAreaVideo {
     area_id: number;

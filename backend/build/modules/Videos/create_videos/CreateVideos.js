@@ -47,7 +47,7 @@ var CreateVideos = /** @class */ (function () {
             var videoAlreadyExists, newVideo;
             return __generator(this, function (_b) {
                 switch (_b.label) {
-                    case 0: return [4 /*yield*/, PrismaClient_1.prisma.form.findFirst({
+                    case 0: return [4 /*yield*/, PrismaClient_1.prisma.video.findFirst({
                             where: {
                                 link: link
                             }
