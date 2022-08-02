@@ -51,7 +51,8 @@ var DeleteAreaVideoByIDController = /** @class */ (function () {
                         area_video_id = Number(id);
                         deleteAreaVideoByID = new DeleteAreaVideoByID_1.DeleteAreaVideo();
                         return [4 /*yield*/, deleteAreaVideoByID.execute({
-                                id: area_video_id
+                                area_id: area_video_id,
+                                video_id: area_video_id
                             })];
                     case 1:
                         deletedAreaVideo = _a.sent();

@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { ReadAreaVideoByID } from "./read_area_videos_by_id";
+import { ReadAreaVideoByID } from "./ReadAreaVideoByID";
 
 export class ReadAreaVideoController {
     async handle(req: Request, res: Response) {

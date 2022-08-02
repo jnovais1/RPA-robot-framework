@@ -12,8 +12,8 @@ model area {
   user_id     Int
   name        String?      @db.VarChar(45)
   description String?      @db.LongText
-  created_at  DateTime?    @default(now()) @db.Timestamp(0)
-  updated_at  DateTime?    @default(now()) @db.Timestamp(0)
+  created_at  DateTime?    @db.DateTime(0)
+  updated_at  DateTime?    @db.DateTime(0)
   user        user         @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_area_user1")
   area_video  area_video[]
 
@@ -27,12 +27,11 @@ model area_video {
   order      Int?
   created_at DateTime? @db.DateTime(0)
   updated_at DateTime? @db.DateTime(0)
-  id         Int       @default(autoincrement()) @db.UnsignedInt
   area       area      @relation(fields: [area_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_area_video_area")
   user       user      @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_area_video_user1")
   video      video     @relation(fields: [video_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_area_video_video1")
 
-  @@id([id, area_id, video_id])
+  @@id([area_id, video_id])
   @@index([area_id], map: "fk_area_video_area_idx")
   @@index([user_id], map: "fk_area_video_user1_idx")
   @@index([video_id], map: "fk_area_video_video1_idx")
@@ -44,8 +43,8 @@ model form {
   title       String?   @db.VarChar(45)
   link        String?   @db.VarChar(45)
   description String?   @db.VarChar(45)
-  changed_at  DateTime? @default(now()) @db.Timestamp(0)
-  updated_at  DateTime? @default(now()) @db.Timestamp(0)
+  changed_at  DateTime? @db.DateTime(0)
+  updated_at  DateTime? @db.DateTime(0)
   user        user      @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_form_user1")
 
   @@index([user_id], map: "fk_form_user1_idx")
@@ -57,8 +56,8 @@ model user {
   password   String       @unique(map: "password_UNIQUE") @db.VarChar(90)
   name       String?      @db.VarChar(45)
   email      String?      @db.VarChar(60)
-  created_at DateTime?    @default(now()) @db.Timestamp(0)
-  updated_at DateTime?    @default(now()) @db.Timestamp(0)
+  created_at DateTime?    @db.DateTime(0)
+  updated_at DateTime?    @db.DateTime(0)
   area       area[]
   area_video area_video[]
   form       form[]
@@ -71,8 +70,8 @@ model video {
   name        String?      @db.VarChar(45)
   description String?      @db.LongText
   link        String?      @db.VarChar(150)
-  created_at  DateTime?    @default(now()) @db.Timestamp(0)
-  updated_at  DateTime?    @default(now()) @db.Timestamp(0)
+  created_at  DateTime?    @db.DateTime(0)
+  updated_at  DateTime?    @db.DateTime(0)
   user        user         @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_video_user1")
   area_video  area_video[]
 

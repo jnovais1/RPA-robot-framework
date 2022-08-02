@@ -42,19 +42,20 @@ var DeleteAreaVideo = /** @class */ (function () {
     function DeleteAreaVideo() {
     }
     DeleteAreaVideo.prototype.execute = function (_a) {
-        var id = _a.id;
+        var area_id = _a.area_id, video_id = _a.video_id;
         return __awaiter(this, void 0, void 0, function () {
-            var result;
+            var deletedAreaVideo;
             return __generator(this, function (_b) {
                 switch (_b.label) {
-                    case 0: return [4 /*yield*/, PrismaClient_1.prisma.area_video["delete"]({
+                    case 0: return [4 /*yield*/, PrismaClient_1.prisma.area_video.deleteMany({
                             where: {
-                                id_area_id_video_id: { id: id }
+                                area_id: area_id,
+                                video_id: video_id
                             }
                         })];
                     case 1:
-                        result = _b.sent();
-                        return [2 /*return*/, result];
+                        deletedAreaVideo = _b.sent();
+                        return [2 /*return*/, deletedAreaVideo];
                 }
             });
         });

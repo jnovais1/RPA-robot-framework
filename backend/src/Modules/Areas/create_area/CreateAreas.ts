@@ -1,12 +1,14 @@
+import { create } from "domain";
 import { prisma } from "../../../database/PrismaClient";
 
 interface ICreateArea {
     name: string;
     description: string;
     user_id: number;
+    video_id: any[];
 }
 export class CreateAreas {
-    async execute({ name, description, user_id }: ICreateArea) {
+    async execute({ name, description, user_id, video_id }: ICreateArea) {
         const areaAlreadyExists = await prisma.area.findFirst({
             where: {
                 name: name
@@ -19,7 +21,10 @@ export class CreateAreas {
             data: {
                 name,
                 description,
-                user_id
+                user_id,
+                area_video: {
+                    create: video_id
+                }
             },
         });
         return newArea;

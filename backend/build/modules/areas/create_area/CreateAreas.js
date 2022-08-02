@@ -42,7 +42,7 @@ var CreateAreas = /** @class */ (function () {
     function CreateAreas() {
     }
     CreateAreas.prototype.execute = function (_a) {
-        var name = _a.name, description = _a.description, user_id = _a.user_id;
+        var name = _a.name, description = _a.description, user_id = _a.user_id, video_id = _a.video_id;
         return __awaiter(this, void 0, void 0, function () {
             var areaAlreadyExists, newArea;
             return __generator(this, function (_b) {
@@ -61,7 +61,10 @@ var CreateAreas = /** @class */ (function () {
                                 data: {
                                     name: name,
                                     description: description,
-                                    user_id: user_id
+                                    user_id: user_id,
+                                    area_video: {
+                                        create: video_id
+                                    }
                                 }
                             })];
                     case 2:

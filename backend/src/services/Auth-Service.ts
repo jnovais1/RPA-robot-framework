@@ -16,17 +16,17 @@ export class AuthenticateUser {
             }
         });
         if (!user) {
-            throw new Error("Usuário ou senha inválidos.")
+            throw new Error("Usuário inválido. ")
         }
         const passwordMatch = await compare(password, user.password);
-       
+
         if (!passwordMatch) {
-            throw new Error("Usuário ou senha inválidos.")
+            throw new Error("Senha incorreta. ")
         }
-        const token = sign({username}, "efcc3fff26baa6c8a3b1a37bed92630d", {
-            subject: user.username,
+        const token = sign({ username }, 'efcc3fff26baa6c8a3b1a37bed92630d', {
+            subject: username,
             expiresIn: "1d"
-        });
-        return {Token: token, Name: user.name, ID: user.id};
+        })
+        return { token: token, name: user.name, id: user.id };
     }
 }

@@ -43,16 +43,17 @@ var CreateAreaController = /** @class */ (function () {
     }
     CreateAreaController.prototype.handle = function (request, response) {
         return __awaiter(this, void 0, void 0, function () {
-            var _a, name, description, user_id, createArea, result;
+            var _a, name, description, user_id, video_id, createArea, result;
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
-                        _a = request.body, name = _a.name, description = _a.description, user_id = _a.user_id;
+                        _a = request.body, name = _a.name, description = _a.description, user_id = _a.user_id, video_id = _a.video_id;
                         createArea = new CreateAreas_1.CreateAreas();
                         return [4 /*yield*/, createArea.execute({
                                 name: name,
                                 description: description,
-                                user_id: user_id
+                                user_id: user_id,
+                                video_id: video_id
                             })];
                     case 1:
                         result = _b.sent();

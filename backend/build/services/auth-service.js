@@ -57,19 +57,19 @@ var AuthenticateUser = /** @class */ (function () {
                     case 1:
                         user = _b.sent();
                         if (!user) {
-                            throw new Error("Usuário ou senha inválidos.");
+                            throw new Error("Usuário inválido. ");
                         }
                         return [4 /*yield*/, (0, bcrypt_1.compare)(password, user.password)];
                     case 2:
                         passwordMatch = _b.sent();
                         if (!passwordMatch) {
-                            throw new Error("Usuário ou senha inválidos.");
+                            throw new Error("Senha incorreta. ");
                         }
-                        token = (0, jsonwebtoken_1.sign)({ username: username }, "efcc3fff26baa6c8a3b1a37bed92630d", {
-                            subject: user.username,
+                        token = (0, jsonwebtoken_1.sign)({ username: username }, 'efcc3fff26baa6c8a3b1a37bed92630d', {
+                            subject: username,
                             expiresIn: "1d"
                         });
-                        return [2 /*return*/, { Token: token, Name: user.name, ID: user.id }];
+                        return [2 /*return*/, { token: token, name: user.name, id: user.id }];
                 }
             });
         });

@@ -15,12 +15,12 @@ export async function ensureAuthenticateUser(req: Request, res: Response, next: 
     }
     const [, token] = authHeader.split(" ")
 
-    try {   
+    try {
         const { sub } = verify(
             token,
             "efcc3fff26baa6c8a3b1a37bed92630d"
         );
-        
+
         return next();
 
     } catch (err) {
