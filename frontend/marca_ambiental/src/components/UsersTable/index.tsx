@@ -1,4 +1,5 @@
 import {Container} from './styles';
+import editing from "../../assets/editing.png";
 import trash from "../../assets/trash.png";
 
 
@@ -33,6 +34,7 @@ export function UsersTable() {
             <th>Email</th>
             <th>Nome de usuário</th>
             <th>Criado em</th>
+            <th>Alterar</th>
             <th>Excluir</th>
           </tr>
         </thead>
@@ -43,6 +45,11 @@ export function UsersTable() {
               <td>{user.email}</td>
               <td>{user.username}</td>
               <td>{user.created_at}</td>
+              <td>
+                <button>
+                    <img src={editing} alt="editing" />
+                </button>
+              </td>
               <td>
                 <button className="Delete">
                   <img src={trash} alt="trash" />

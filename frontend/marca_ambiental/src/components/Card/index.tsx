@@ -1,8 +1,9 @@
 import React from "react";
 import { CardProps } from "../../App";
-import {Container, Content} from "./styles";
+import {Container, Content, LinkCard} from "./styles";
 import trash from "../../assets/trash.png";
 import editing from "../../assets/editing.png";
+import play from "../../assets/play.png";
 
 export const Card: React.FC<CardProps> = ({title, description, type, link}) => {
   console.log(type);
@@ -11,13 +12,21 @@ export const Card: React.FC<CardProps> = ({title, description, type, link}) => {
     <>
       <Container> 
         <Content>
-          <a href={link}>
+          <LinkCard href={link}>
             <div >
               <h4 className="Title">{title}</h4>
               <p className="BigText">{description}</p>
                 
+              {type === 'Area' ? (
+                <div className="FirstVideoLink">
+                  <a href="/teste">
+                    <img className='playimg' src={play} alt="play" />
+                    Primeiro video
+                  </a>
+                </div>
+              ):(<></>)}
             </div>
-            { false ? (
+            { true ? (
               <div>
                 <button>
                   <img src={editing} alt="editing" />
@@ -28,8 +37,7 @@ export const Card: React.FC<CardProps> = ({title, description, type, link}) => {
               </div>
             ):(<></>)
             }
-
-          </a>
+          </LinkCard>
         </Content>
       </Container>
     </>

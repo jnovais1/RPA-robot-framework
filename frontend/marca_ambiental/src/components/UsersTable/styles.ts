@@ -1,4 +1,3 @@
-import { About } from './../../pages/About';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -26,7 +25,7 @@ export const Container = styled.div`
   }
   
   button{
-    background: var(--red-button);
+    background: var(--blue-button);
     color: #FFF;
     border: 0;
     border-radius: 0.25rem;
@@ -39,5 +38,9 @@ export const Container = styled.div`
       height: 1rem;
       width: 1rem;
     }
+   
+  }
+  .Delete {
+      background: var(--red-button);
   }
 `;
