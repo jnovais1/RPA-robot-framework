@@ -1,0 +1,23 @@
+"use strict";
+exports.__esModule = true;
+exports.formRoute = void 0;
+var express_1 = require("express");
+var ensureAuthenticateUser_1 = require("../middlewares/ensureAuthenticateUser");
+var CreateFormController_1 = require("../modules/Forms/create_forms/CreateFormController");
+var DeleteFormController_1 = require("../modules/Forms/delete_form/DeleteFormController");
+var ReadAllFormsController_1 = require("../modules/Forms/ReadForms/AllForms/ReadAllFormsController");
+var GetFormByIDController_1 = require("../modules/Forms/ReadForms/ByID/GetFormByIDController");
+var UpdateFormController_1 = require("../modules/Forms/UpdateForm/UpdateFormController");
+var formRoute = (0, express_1.Router)();
+exports.formRoute = formRoute;
+var createFormController = new CreateFormController_1.CreateFormController();
+var updateFormController = new UpdateFormController_1.UpdateFormController();
+var deleteFormController = new DeleteFormController_1.DeleteFormController();
+var readFormByIdController = new GetFormByIDController_1.ReadFormByIDController();
+var readAllFormsController = new ReadAllFormsController_1.ReadAllFormsController();
+formRoute.post('/', ensureAuthenticateUser_1.ensureAuthenticateUser, createFormController.handle);
+formRoute.put('/:id', ensureAuthenticateUser_1.ensureAuthenticateUser, updateFormController.handle);
+formRoute["delete"]('/:id', ensureAuthenticateUser_1.ensureAuthenticateUser, deleteFormController.handle);
+formRoute.get('/:id', readFormByIdController.handle);
+formRoute.get('/', readAllFormsController.handle);
+//# sourceMappingURL=FormRoute.js.map
