@@ -6,7 +6,23 @@ import { formRoute } from "./routes/FormRoute";
 import { videoRoute } from "./routes/VideoRoute";
 
 const app = express();
-const port = 3000;
+const cors = require("cors");
+const port = 3001;
+
+app.use((req, res, next) => {
+    res.header("Access-control-allow-origin", 'http://localhost:3000')
+    res.header(
+        "Access-Control-Allow-Methods",
+        "GET,POST,PUT,DELETE,PATCH,OPTIONS"
+    )
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+    )
+    next()
+})
+
+app.use(cors({ credentials: true, origin: 'http://localhost:3000' }))
 
 app.use(express.json());
 app.use('/area', areaRoutes);
