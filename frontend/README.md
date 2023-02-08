@@ -2,6 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Change Base URL
+
+Change the src/services/api.ts file line 4 to your backend link
+
+export const api = axios.create({
+  baseURL: [Your backend link],
+});
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -44,3 +52,5 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
