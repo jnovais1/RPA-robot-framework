@@ -7,8 +7,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Change the src/services/api.ts file line 4 to your backend link
 
 ```
-export const api = axios.create({\
-  baseURL: [Your backend link],\
+export const api = axios.create({
+  baseURL: [Your backend link],
 });
 ```
 
