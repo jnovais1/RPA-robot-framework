@@ -29,16 +29,14 @@ npm install
 
 
 <strong><li>Criação do banco de dados: </li></strong>
+npx prisma generate <br>
 npx prisma db push 
 
+<strong><li>Build da aplicação: </li></strong>
+npm run build
 
 <strong><li>Inicialização da aplicação: </li></strong>
 npm start 
 <ul>
 
 
-- ***Em caso de erro com o ".prisma/client", executar os seguintes passos:***
- - npx prisma generate
- - Utilizando a IDE "VSCode": 
- - CTRL + SHIFT + P > Developer: Reload Window
- 
