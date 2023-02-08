@@ -23,7 +23,7 @@ export class AuthenticateUser {
         if (!passwordMatch) {
             throw new Error("Senha incorreta. ")
         }
-        const token = sign({ username }, 'efcc3fff26baa6c8a3b1a37bed92630d', {
+        const token = sign({ username }, process.env.SECRET, {
             subject: username,
             expiresIn: "1d"
         })

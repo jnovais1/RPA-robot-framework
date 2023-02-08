@@ -1,10 +1,10 @@
 import { Router } from "express";
 import { ensureAuthenticateUser } from "../middlewares/ensureAuthenticateUser";
-import { CreateFormController } from "../modules/Forms/create_forms/CreateFormController";
-import { DeleteFormController } from "../modules/Forms/delete_form/DeleteFormController";
-import { ReadAllFormsController } from "../modules/Forms/ReadForms/AllForms/ReadAllFormsController";
-import { ReadFormByIDController } from "../modules/Forms/ReadForms/ByID/GetFormByIDController";
-import { UpdateFormController } from "../modules/Forms/UpdateForm/UpdateFormController";
+import { CreateFormController } from "../Modules/Forms/create_forms/CreateFormController";
+import { DeleteFormController } from "../Modules/Forms/delete_form/DeleteFormController";
+import { ReadAllFormsController } from "../Modules/Forms/read_forms/AllForms/ReadAllFormsController";
+import { ReadFormByIDController } from "../Modules/Forms/read_forms/ByID/GetFormByIDController";
+import { UpdateFormController } from "../Modules/Forms/update_forms/UpdateFormController";
 
 const formRoute = Router();
 

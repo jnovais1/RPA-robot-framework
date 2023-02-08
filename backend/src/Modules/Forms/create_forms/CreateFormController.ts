@@ -12,6 +12,6 @@ export class CreateFormController {
             user_id,
             link
         });
-        return response.json("Formulário cadastrado! " + result);
+        return response.json(result);
     }
 }

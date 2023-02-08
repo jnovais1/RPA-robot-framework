@@ -10,7 +10,7 @@ export async function ensureAuthenticateUser(req: Request, res: Response, next: 
 
     if (!authHeader) {
         return res.status(401).json({
-            message: "Token inválido."
+            message: "Token inválido. "
         });
     }
     const [, token] = authHeader.split(" ")
@@ -18,14 +18,14 @@ export async function ensureAuthenticateUser(req: Request, res: Response, next: 
     try {
         const { sub } = verify(
             token,
-            "efcc3fff26baa6c8a3b1a37bed92630d"
+            process.env.SECRET
         );
 
         return next();
 
     } catch (err) {
         return res.status(401).json({
-            message: "Token inválido."
+            message: "Token inválido. "
         });
     }
 }
