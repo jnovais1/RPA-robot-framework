@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import woman from "../assets/woman.png";
+import team from "../assets/team.png";
 import ist from "../assets/ist.svg";
 import sesi_tech from "../assets/sesi_tech.svg";
 import logo_marca from "../assets/logo_marca.png";
@@ -49,11 +49,11 @@ const Container = styled.div`
     
     
   }
-  .woman-image{
+  .team-image{
     border-radius:1rem;
     margin-top: 2rem;
-    height: 322px;
-    width: 662px;
+    height: 474px;
+    width: 632px;
      
     }
   .logo-marca-image{
@@ -116,7 +116,7 @@ export const About: React.FC<AboutProps> = props => {
         Vamos lá? Participe! 
         </p>
         <div className="organize1">
-          <img className="woman-image" src={woman} alt="Mulher" />
+          <img className="team-image" src={team} alt="Mulher" />
         </div>
 
         <div className="organize2">
