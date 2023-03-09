@@ -1,10 +1,10 @@
 import { Router } from "express";
 import { ensureAuthenticateUser } from "../middlewares/ensureAuthenticateUser";
-import { CreateUserController } from "../Modules/users/create_user/CreateUserController";
-import { DeleteUserByIDController } from "../Modules/users/delete_user/DeleteUserByIDController";
-import { ReadUsersByIdController } from "../Modules/users/read_user/ByID/ReadUsersByIDController";
-import { ReadAllUsersController } from "../Modules/users/read_user/ReadAllUsersController";
-import { UpdateUserController } from "../Modules/users/update_user/UpdateUserController";
+import { CreateUserController } from "../Modules/Users/create_user/CreateUserController";
+import { DeleteUserByIDController } from "../Modules/Users/delete_user/DeleteUserByIDController";
+import { ReadUsersByIdController } from "../Modules/Users/read_user/ByID/ReadUsersByIDController";
+import { ReadAllUsersController } from "../Modules/Users/read_user/ReadAllUsersController";
+import { UpdateUserController } from "../Modules/Users/update_user/UpdateUserController";
 import { AuthenticateUserController } from "../services/AuthenticateUserController";
 
 
