@@ -1,10 +1,10 @@
 import { Router } from "express";
 import { ensureAuthenticateUser } from "../middlewares/ensureAuthenticateUser";
-import { CreateAreaController } from "../Modules/areas/create-area/CreateAreaController";
-import { DeleteAreaByIDController } from "../Modules/areas/delete-area/ByID/DeleteAreaByIDController";
-import { ReadAreaController } from "../Modules/areas/read-area/ByID/ReadAreaController";
-import { ReadAllAreasController } from "../Modules/areas/read-area/ReadAllAreasController";
-import { UpdateAreaController } from "../Modules/areas/update-area/UpdateAreaController";
+import { CreateAreaController } from "../Modules/Areas/create_area/CreateAreaController";
+import { DeleteAreaByIDController } from "../Modules/Areas/delete-area/ByID/DeleteAreaByIDController";
+import { ReadAreaController } from "../Modules/Areas/read-area/ByID/ReadAreaController";
+import { ReadAllAreasController } from "../Modules/Areas/read-area/ReadAllAreasController";
+import { UpdateAreaController } from "../Modules/Areas/update-area/UpdateAreaController";
 
 const areaRoutes = Router();
 
