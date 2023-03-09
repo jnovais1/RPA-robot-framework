@@ -42,7 +42,7 @@ model form {
   id          Int       @id @unique(map: "id_UNIQUE") @default(autoincrement())
   user_id     Int
   title       String?   @db.VarChar(45)
-  link        text?   @db.VarChar(1000)
+  link        String?   @db.VarChar(1000)
   description String?   @db.VarChar(100)
   changed_at  DateTime? @default(now()) 
   updated_at  DateTime? @default(now())
