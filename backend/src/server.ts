@@ -47,4 +47,7 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
         message: "Internal server error",
     });
 });
-app.listen(port);
+app.get('/', (req: Request, res: Response) => {
+    res.send('API Marca Ambiental')
+})
+app.listen(port, () => console.log(`Server running on port: ${port}`));
