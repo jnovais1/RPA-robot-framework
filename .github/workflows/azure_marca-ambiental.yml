@@ -23,7 +23,6 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-        cd runner/work/marca-deploy
           npm install
           npm run build --if-present
           npm run test --if-present
@@ -31,7 +30,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: .
+          path: ./runner/work/marca-deploy
 
   deploy:
     runs-on: ubuntu-latest
