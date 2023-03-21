@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230321 20:14:54.224" rpa="false" schemaversion="3">
+<suite id="s1" name="Model" source="C:\marca_ambiental\tests\model.robot">
+<test id="s1-t1" name="Cenário 1: Iniciando aplicação" line="15">
+<kw name="Abrir aplicação em desenvolvimento">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>localhost:3000/</arg>
+<arg>edge</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230321 20:14:54.631" level="INFO">Opening browser 'edge' to base url 'localhost:3000/'.</msg>
+<status status="PASS" starttime="20230321 20:14:54.630" endtime="20230321 20:14:56.292"/>
+</kw>
+<status status="PASS" starttime="20230321 20:14:54.630" endtime="20230321 20:14:56.293"/>
+</kw>
+<status status="PASS" starttime="20230321 20:14:54.629" endtime="20230321 20:14:56.295"/>
+</test>
+<status status="PASS" starttime="20230321 20:14:54.226" endtime="20230321 20:14:56.308"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Model">Model</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
